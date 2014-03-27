@@ -24,6 +24,12 @@
 		397CFD9D18E3C62C0019599E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397CFD7818E3C62C0019599E /* UIKit.framework */; };
 		397CFDA518E3C62C0019599E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 397CFDA318E3C62C0019599E /* InfoPlist.strings */; };
 		397CFDA718E3C62C0019599E /* BrickBreakerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 397CFDA618E3C62C0019599E /* BrickBreakerTests.m */; };
+		397CFDB618E3C6890019599E /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 397CFDB018E3C6890019599E /* ball.png */; };
+		397CFDB718E3C6890019599E /* ball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 397CFDB118E3C6890019599E /* ball@2x.png */; };
+		397CFDB818E3C6890019599E /* brick.png in Resources */ = {isa = PBXBuildFile; fileRef = 397CFDB218E3C6890019599E /* brick.png */; };
+		397CFDB918E3C6890019599E /* brick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 397CFDB318E3C6890019599E /* brick@2x.png */; };
+		397CFDBA18E3C6890019599E /* paddle.png in Resources */ = {isa = PBXBuildFile; fileRef = 397CFDB418E3C6890019599E /* paddle.png */; };
+		397CFDBB18E3C6890019599E /* paddle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 397CFDB518E3C6890019599E /* paddle@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +66,12 @@
 		397CFDA218E3C62C0019599E /* BrickBreakerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BrickBreakerTests-Info.plist"; sourceTree = "<group>"; };
 		397CFDA418E3C62C0019599E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		397CFDA618E3C62C0019599E /* BrickBreakerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrickBreakerTests.m; sourceTree = "<group>"; };
+		397CFDB018E3C6890019599E /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ball.png; path = BrickBreaker/ball.png; sourceTree = "<group>"; };
+		397CFDB118E3C6890019599E /* ball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ball@2x.png"; path = "BrickBreaker/ball@2x.png"; sourceTree = "<group>"; };
+		397CFDB218E3C6890019599E /* brick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = brick.png; path = BrickBreaker/brick.png; sourceTree = "<group>"; };
+		397CFDB318E3C6890019599E /* brick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "brick@2x.png"; path = "BrickBreaker/brick@2x.png"; sourceTree = "<group>"; };
+		397CFDB418E3C6890019599E /* paddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = paddle.png; path = BrickBreaker/paddle.png; sourceTree = "<group>"; };
+		397CFDB518E3C6890019599E /* paddle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "paddle@2x.png"; path = "BrickBreaker/paddle@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +102,12 @@
 		397CFD6818E3C62C0019599E = {
 			isa = PBXGroup;
 			children = (
+				397CFDB018E3C6890019599E /* ball.png */,
+				397CFDB118E3C6890019599E /* ball@2x.png */,
+				397CFDB218E3C6890019599E /* brick.png */,
+				397CFDB318E3C6890019599E /* brick@2x.png */,
+				397CFDB418E3C6890019599E /* paddle.png */,
+				397CFDB518E3C6890019599E /* paddle@2x.png */,
 				397CFD7C18E3C62C0019599E /* BrickBreaker */,
 				397CFDA018E3C62C0019599E /* BrickBreakerTests */,
 				397CFD7318E3C62C0019599E /* Frameworks */,
@@ -241,6 +259,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				397CFD8118E3C62C0019599E /* InfoPlist.strings in Resources */,
+				397CFDB718E3C6890019599E /* ball@2x.png in Resources */,
+				397CFDB818E3C6890019599E /* brick.png in Resources */,
+				397CFDB618E3C6890019599E /* ball.png in Resources */,
+				397CFDBA18E3C6890019599E /* paddle.png in Resources */,
+				397CFDB918E3C6890019599E /* brick@2x.png in Resources */,
+				397CFDBB18E3C6890019599E /* paddle@2x.png in Resources */,
 				397CFD9418E3C62C0019599E /* Images.xcassets in Resources */,
 				397CFD9218E3C62C0019599E /* Spaceship.png in Resources */,
 				397CFD8A18E3C62C0019599E /* Main.storyboard in Resources */,
