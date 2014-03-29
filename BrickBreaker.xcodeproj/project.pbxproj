@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3962E58518E66E2E002F4CFF /* blip.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3962E58218E66E2E002F4CFF /* blip.caf */; };
+		3962E58618E66E2E002F4CFF /* brickhit.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3962E58318E66E2E002F4CFF /* brickhit.caf */; };
+		3962E58718E66E2E002F4CFF /* gameover.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3962E58418E66E2E002F4CFF /* gameover.caf */; };
+		3962E58A18E674DD002F4CFF /* EndScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3962E58918E674DD002F4CFF /* EndScene.m */; };
+		3962E58D18E67AB2002F4CFF /* WinScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3962E58C18E67AB2002F4CFF /* WinScene.m */; };
 		397CFD7518E3C62C0019599E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397CFD7418E3C62C0019599E /* Foundation.framework */; };
 		397CFD7718E3C62C0019599E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397CFD7618E3C62C0019599E /* CoreGraphics.framework */; };
 		397CFD7918E3C62C0019599E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397CFD7818E3C62C0019599E /* UIKit.framework */; };
@@ -43,6 +48,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3962E58218E66E2E002F4CFF /* blip.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = blip.caf; sourceTree = "<group>"; };
+		3962E58318E66E2E002F4CFF /* brickhit.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = brickhit.caf; sourceTree = "<group>"; };
+		3962E58418E66E2E002F4CFF /* gameover.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gameover.caf; sourceTree = "<group>"; };
+		3962E58818E674DD002F4CFF /* EndScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndScene.h; sourceTree = "<group>"; };
+		3962E58918E674DD002F4CFF /* EndScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndScene.m; sourceTree = "<group>"; };
+		3962E58B18E67AB2002F4CFF /* WinScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinScene.h; sourceTree = "<group>"; };
+		3962E58C18E67AB2002F4CFF /* WinScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WinScene.m; sourceTree = "<group>"; };
 		397CFD7118E3C62C0019599E /* BrickBreaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrickBreaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		397CFD7418E3C62C0019599E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		397CFD7618E3C62C0019599E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -139,6 +151,9 @@
 		397CFD7C18E3C62C0019599E /* BrickBreaker */ = {
 			isa = PBXGroup;
 			children = (
+				3962E58218E66E2E002F4CFF /* blip.caf */,
+				3962E58318E66E2E002F4CFF /* brickhit.caf */,
+				3962E58418E66E2E002F4CFF /* gameover.caf */,
 				397CFD8518E3C62C0019599E /* AppDelegate.h */,
 				397CFD8618E3C62C0019599E /* AppDelegate.m */,
 				397CFD8818E3C62C0019599E /* Main.storyboard */,
@@ -146,6 +161,10 @@
 				397CFD8C18E3C62C0019599E /* ViewController.m */,
 				397CFD8E18E3C62C0019599E /* MyScene.h */,
 				397CFD8F18E3C62C0019599E /* MyScene.m */,
+				3962E58818E674DD002F4CFF /* EndScene.h */,
+				3962E58918E674DD002F4CFF /* EndScene.m */,
+				3962E58B18E67AB2002F4CFF /* WinScene.h */,
+				3962E58C18E67AB2002F4CFF /* WinScene.m */,
 				397CFD9118E3C62C0019599E /* Spaceship.png */,
 				397CFD9318E3C62C0019599E /* Images.xcassets */,
 				397CFD7D18E3C62C0019599E /* Supporting Files */,
@@ -260,11 +279,14 @@
 			files = (
 				397CFD8118E3C62C0019599E /* InfoPlist.strings in Resources */,
 				397CFDB718E3C6890019599E /* ball@2x.png in Resources */,
+				3962E58518E66E2E002F4CFF /* blip.caf in Resources */,
 				397CFDB818E3C6890019599E /* brick.png in Resources */,
 				397CFDB618E3C6890019599E /* ball.png in Resources */,
 				397CFDBA18E3C6890019599E /* paddle.png in Resources */,
+				3962E58718E66E2E002F4CFF /* gameover.caf in Resources */,
 				397CFDB918E3C6890019599E /* brick@2x.png in Resources */,
 				397CFDBB18E3C6890019599E /* paddle@2x.png in Resources */,
+				3962E58618E66E2E002F4CFF /* brickhit.caf in Resources */,
 				397CFD9418E3C62C0019599E /* Images.xcassets in Resources */,
 				397CFD9218E3C62C0019599E /* Spaceship.png in Resources */,
 				397CFD8A18E3C62C0019599E /* Main.storyboard in Resources */,
@@ -289,7 +311,9 @@
 				397CFD9018E3C62C0019599E /* MyScene.m in Sources */,
 				397CFD8D18E3C62C0019599E /* ViewController.m in Sources */,
 				397CFD8718E3C62C0019599E /* AppDelegate.m in Sources */,
+				3962E58D18E67AB2002F4CFF /* WinScene.m in Sources */,
 				397CFD8318E3C62C0019599E /* main.m in Sources */,
+				3962E58A18E674DD002F4CFF /* EndScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +520,7 @@
 				397CFDAC18E3C62C0019599E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		397CFDAD18E3C62C0019599E /* Build configuration list for PBXNativeTarget "BrickBreakerTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +529,7 @@
 				397CFDAF18E3C62C0019599E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

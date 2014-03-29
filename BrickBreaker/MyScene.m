@@ -7,6 +7,8 @@
 //
 
 #import "MyScene.h"
+#import "EndScene.h"
+#import "WinScene.h"
 
 @interface MyScene ()
 
@@ -19,25 +21,58 @@
 
 
 //BitMasking and flipping the bits. << is called a BitShift, effectively moving the bit to the left
-static const uint32_t ballCategory   = 0x1;      // 00000000000000000000000000000001
-static const uint32_t brickCategory  = 0x1 << 1; // 00000000000000000000000000000010
-static const uint32_t paddleCategory = 0x1 << 2; // 00000000000000000000000000000100
-static const uint32_t edgeCategory   = 0x1 << 3; // 00000000000000000000000000001000
+static const uint32_t ballCategory       = 0x1;      // 00000000000000000000000000000001
+static const uint32_t brickCategory      = 0x1 << 1; // 00000000000000000000000000000010
+static const uint32_t paddleCategory     = 0x1 << 2; // 00000000000000000000000000000100
+static const uint32_t edgeCategory       = 0x1 << 3; // 00000000000000000000000000001000
+static const uint32_t bottomEdgeCategory = 0x1 << 4; // 00000000000000000000000000010000
 
 - (void)didBeginContact:(SKPhysicsContact *)contact{
 
     if (contact.bodyA.categoryBitMask == brickCategory) {
         
         [contact.bodyA.node removeFromParent];
+        SKAction *SFX = [SKAction playSoundFileNamed:@"brickhit.caf" waitForCompletion:NO];
+        [self runAction:SFX];
         self.bricks--;
-        NSLog(@"Bricks Left: %d", self.bricks);
         
-    }else if (contact.bodyB.categoryBitMask == brickCategory){
+        if (self.bricks == 0) {
+            
+            WinScene *win = [WinScene sceneWithSize:self.size];
+            [self.view presentScene:win transition: [SKTransition doorsCloseVerticalWithDuration:2]];
+            
+        }
+        
+        
+        
+    }else if (contact.bodyA.categoryBitMask == paddleCategory){
+        
+        SKAction *SFX = [SKAction playSoundFileNamed:@"blip.caf" waitForCompletion:NO];
+        [self runAction:SFX];
+        
+    }
+    
+    if (contact.bodyB.categoryBitMask == brickCategory){
         
         [contact.bodyB.node removeFromParent];
         
     }
     
+    if (contact.bodyA.categoryBitMask == bottomEdgeCategory | contact.bodyB.categoryBitMask == bottomEdgeCategory) {
+        
+        EndScene *end = [EndScene sceneWithSize:self.size];
+        [self.view presentScene:end transition:[SKTransition doorsCloseVerticalWithDuration:1]];
+        
+    }
+
+}
+
+- (void)addLowerEdge:(CGSize) size{
+    
+    SKNode *lowerEdge = [SKNode node];
+    lowerEdge.physicsBody = [SKPhysicsBody bodyWithEdgeFromPoint:CGPointMake(0, 1) toPoint:CGPointMake(size.width, 1)];
+    lowerEdge.physicsBody.categoryBitMask = bottomEdgeCategory;
+    [self addChild:lowerEdge];
     
 }
 
@@ -55,7 +90,7 @@ static const uint32_t edgeCategory   = 0x1 << 3; // 0000000000000000000000000000
     ball.physicsBody.linearDamping = 0;
     ball.physicsBody.restitution = 1.0f;
     ball.physicsBody.categoryBitMask = ballCategory;
-    ball.physicsBody.contactTestBitMask = brickCategory | paddleCategory;
+    ball.physicsBody.contactTestBitMask = brickCategory | paddleCategory | bottomEdgeCategory;
 
     //NOTE: The code below overrides the default collision of all objects to only brick and edge
     //ball.physicsBody.collisionBitMask = brickCategory | edgeCategory;
@@ -133,6 +168,7 @@ static const uint32_t edgeCategory   = 0x1 << 3; // 0000000000000000000000000000
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
+        
         /* Setup your scene here */
         self.backgroundColor = [SKColor whiteColor];
         
@@ -142,13 +178,12 @@ static const uint32_t edgeCategory   = 0x1 << 3; // 0000000000000000000000000000
         // change gravity settings of the physics world
         self.physicsWorld.gravity = CGVectorMake(0, 0);
         self.physicsWorld.contactDelegate = self;
-        
         self.physicsBody.categoryBitMask = edgeCategory;
         
         [self addBall:size];
         [self addPlayer:size];
         [self addBricks:size];
-        
+        [self addLowerEdge:size];
         
     }
     return self;
